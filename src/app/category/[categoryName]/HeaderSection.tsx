@@ -1,7 +1,7 @@
 import { GenreMenu } from "@/app/_components/GenreMenu";
 import { ModeToggle } from "@/app/_components/ModeToggle";
-import { Input } from "@/components/ui/input";
-import { Film, Link, Search } from "lucide-react";
+import { Film } from "lucide-react";
+import Link from "next/link";
 import { SearchSection } from "@/app/_components/Search";
 
 export const HeaderSection = () => {
