@@ -64,7 +64,7 @@ export const MovieList = async ({ genreId }: MovieListProps) => {
               <span className="font-semibold">
                 {movie.vote_average.toFixed(1)}
               </span>
-              <span className="text-gray-500">/10</span>
+              <span className="text-muted-foreground">/10</span>
             </div>
 
             <h3 className="mt-1 text-sm font-medium line-clamp-2">

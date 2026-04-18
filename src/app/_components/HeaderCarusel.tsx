@@ -52,7 +52,7 @@ export const HeaderCarusel = () => {
         <CarouselContent className="-ml-4 h-full">
           {movies.map((item) => (
             <CarouselItem key={item.id} className="pl-4 h-full basis-full">
-              <Card className="h-full relative overflow-hidden">
+              <Card className="h-full relative overflow-hidden rounded-[8px] border-0 py-0">
                 <CardContent className="p-0 h-full relative">
                   <img
                     src={`https://image.tmdb.org/t/p/original${item.backdrop_path}`}
@@ -69,7 +69,7 @@ export const HeaderCarusel = () => {
                     <div className="flex items-center gap-1">
                       <Star className="text-yellow-500 w-4 h-4" />
                       <span className="font-semibold text-sm">
-                        {item.vote_average}
+                        {item.vote_average.toFixed(1)}
                       </span>
                       <span className="text-gray-300 text-sm">/10</span>
                     </div>
@@ -86,8 +86,8 @@ export const HeaderCarusel = () => {
           ))}
         </CarouselContent>
 
-        <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow" />
-        <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow" />
+        <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 bg-background/90 text-foreground p-2 shadow hover:bg-background" />
+        <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 bg-background/90 text-foreground p-2 shadow hover:bg-background" />
       </Carousel>
     </div>
   );

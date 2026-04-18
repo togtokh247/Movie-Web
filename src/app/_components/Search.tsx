@@ -136,7 +136,7 @@ export const SearchSection = () => {
                   <div className="flex items-center gap-1 text-sm">
                     <Star className="text-yellow-500 w-4 h-4" />
                     {item.vote_average.toFixed(1)}
-                    <span className="text-gray-400">/10</span>
+                    <span className="text-muted-foreground">/10</span>
                   </div>
                 </div>
                 <ArrowRight className="opacity-70" />

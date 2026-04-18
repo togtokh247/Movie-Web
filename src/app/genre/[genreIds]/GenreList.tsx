@@ -39,13 +39,13 @@ export default async function GenrePage({ params }: { params: { id: string } }) 
     <div className="px-10 py-10 flex gap-10">
       <div className="flex-1">
         <h2 className="text-2xl font-bold mb-3">Genre: {currentGenre}</h2>
-        <p className="text-gray-500 mb-8">{movies.length} results</p>
+        <p className="text-muted-foreground mb-8">{movies.length} results</p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {movies.map((movie: any) => (
             <div
               key={movie.id}
-              className="rounded-lg shadow overflow-hidden hover:scale-[1.02] transition cursor-pointer"
+              className="rounded-[8px] border bg-card text-card-foreground shadow-sm overflow-hidden hover:scale-[1.02] transition cursor-pointer"
             >
               <img
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
@@ -55,7 +55,9 @@ export default async function GenrePage({ params }: { params: { id: string } }) 
 
               <div className="p-3">
                 <p className="font-medium">{movie.title}</p>
-                <p className="text-sm text-gray-500">{movie.vote_average}/10</p>
+                <p className="text-sm text-muted-foreground">
+                  {Number(movie.vote_average || 0).toFixed(1)}/10
+                </p>
               </div>
             </div>
           ))}
@@ -70,7 +72,7 @@ export default async function GenrePage({ params }: { params: { id: string } }) 
             <a
               key={genre.id}
               href={`/genre/${genre.id}`}
-              className={`px-3 py-1 border rounded-full text-sm hover:bg-gray-100 ${
+              className={`px-3 py-1 border rounded-full text-sm hover:bg-accent ${
                 genre.id.toString() === id ? "bg-black text-white" : ""
               }`}
             >

@@ -68,20 +68,20 @@ export default function CategoryPage() {
               <Link
                 key={movie.id}
                 href={`/movie/${movie.id}`}
-                className="block w-[230px] h-[439px] bg-gray-200 rounded-[10px] p-2 transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer"
+                className="block w-[230px] h-[439px] rounded-[8px] border bg-card p-2 text-card-foreground shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer"
               >
                 <img
                   src={"https://image.tmdb.org/t/p/w500/" + movie.poster_path}
-                  className="w-full h-[340px] rounded-[10px] object-cover"
+                  className="w-full h-[340px] rounded-[8px] object-cover"
                 />
                 <div className="flex items-center gap-1 mt-2">
                   <span className="font-semibold flex gap-2">
-                    <Star className="text-yellow-500 w-5 h-5" />
-                    {movie.vote_average}
+                    <Star className="text-yellow-500 fill-yellow-400 w-5 h-5" />
+                    {movie.vote_average.toFixed(1)}
                   </span>
-                  /10
+                  <span className="text-muted-foreground">/10</span>
                 </div>
-                <h1 className="text-black font-semibold mt-1">
+                <h1 className="font-semibold mt-1">
                   {movie.original_title}
                 </h1>
               </Link>
